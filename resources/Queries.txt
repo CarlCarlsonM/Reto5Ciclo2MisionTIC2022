@@ -1,0 +1,15 @@
+-- Query 1
+SELECT ID_Lider, Nombre, Primer_Apellido, Ciudad_Residencia 
+FROM Lider 
+ORDER BY Ciudad_Residencia
+
+-- Query 2
+SELECT ID_Proyecto, Constructora, Numero_Habitaciones, Ciudad
+FROM Proyecto WHERE Clasificacion = 'Casa Campestre'
+AND Ciudad IN('Santa Marta','Cartagena','Barranquilla')
+
+-- Query 3
+SELECT C.ID_Compra, P.Constructora, P.Banco_Vinculado FROM Compra C
+JOIN Proyecto P ON (C.ID_Proyecto = P.ID_Proyecto)
+WHERE C.Proveedor = 'Homecenter' AND P.Ciudad = 'Salento'
+
